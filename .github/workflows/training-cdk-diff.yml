@@ -17,6 +17,7 @@ jobs:
         with:
           role-to-assume: ${{ secrets.AWS_ROLE_ARN }}
           aws-region: us-east-1
+          role-skip-session-tagging: true
       - run: npm ci
       - run: npm run build
       - run: npx cdk diff
